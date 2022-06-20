@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: oswald;
     src: url('fonts/Oswald-VariableFont_wght.ttf');
@@ -19,6 +18,56 @@
     font-family: kelly;
     src: url('fonts/kelly_slab/KellySlab-Regular.ttf');
 }
+
+@font-face {
+    font-family: open-sans;
+    src: url('fonts/open_sans/OpenSans.ttf');
+}
+
+/* support for the material design icons */
+@font-face {
+    font-family: 'material-icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/material-icons/material-icons.woff2') format('woff2');
+}
+.material-icons {
+    font-family: 'material-icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    padding: .5rem;
+    direction: ltr;
+    /* border: .02rem solid rgb(57, 53, 53, .8); */
+    border-radius: 50%;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+.material-icons.md-large{
+    font-size: 8rem;
+}
+.material-icons.md-dark {
+    color: rgba(50, 50, 50, 0.99);
+}
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
 .flex {
     display: flex;
     align-items: center;
@@ -67,12 +116,15 @@ header {
 .menu-btn{
     display: none;
 }
+.intro-container {
+    height: 80vh;
+}
 .intro {
     background-color: #fdfcfca1;
     /* backdrop-filter: blur(.8rem); */
-    position: absolute;
-    top: 15rem;
-    left: 10rem;
+    /* position: absolute; */
+    margin-top: 10rem;
+    margin-left: 10rem;
     width: 70%;
     padding: .6rem;
     text-align: center;
@@ -133,8 +185,8 @@ header {
         padding-right: 1.5rem;
     }
     .intro {
-        position: absolute;
-        left:0;
+        margin-top: 10rem;
+        margin-left: 0;
         width: 100%;
         /* right: 0; */
     }
@@ -181,7 +233,95 @@ header {
 .close-icon-open {
     display: block;
 }
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.services-container {
+    background: #f5f1f148;
+   
+}
+.services-header{
+    margin: auto;
+    text-align: center;
+   
+   
+}
+.services-heading {
+ font-family: oswald;
+ font-size: 2rem;
+ color: rgb(49, 48, 48, .9);
+}
+.services-heading::after{
+    content: '';
+    display: block;
+    width: 40%;
+    height: .5rem;
+    background: rgb(57, 53, 53, .8);
+    margin: auto;
+}
+.services-card{
+    width: 80%;
+    margin: auto;
+    padding: .9rem;
+    /* border: .09rem solid rgb(57, 53, 53, .8); */
+    border-radius: .8rem;
+    background-color: #FDFCFC;
+    /* box-shadow: .1rem .1rem rgb(57, 53, 53, .8); */
+}
+.service-card-icon {
+    padding: .4rem;
+    display: flex;
+    justify-content: center;
+}
+.service-card {
+    text-align: center;
+}
+.service-text {
+    text-align: center;
+    color: rgb(57, 53, 53);
+    line-height: 2;
+    font-family: 'open-sans';
+}
 
+.service-header {
+    color: rgba(44, 44, 44, 0.932);
+    font-family: oswald;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+    /* text-decoration: underline; */
+}
 
+.services-card:hover .card-icon {
+    color: rgba(255, 255, 255, 1);
+    transition: color 2s ease-out;
+}
+.services-card:hover .card-icon {
+    background-color: rgba(50, 50, 50, 0.99);
+    transition: background-color 2s ease-in-out;
+}
+/* .services-card:hover {
+    transform: scale(1.08, 1.08);
+    
+} */
+.services:last-child {
+    margin-bottom: .5rem;
+}
+
+@media(min-width: 35em) {
+    .services {
+        flex-direction: row;
+    }
+    .services-container {
+        background: #ddddddda;
+        padding: .6rem;
+    }
+    .service-card {
+        border-bottom: .09rem solid black;
+    }
+}
 
 
