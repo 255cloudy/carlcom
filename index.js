@@ -44,7 +44,6 @@ class Carousel {
         this.buttonSelected = 'carousel-button-selected'
         this.carouselImage = '.carousel-image'
         this.carousel = carouselNode
-
         this.items = this.carousel.querySelectorAll('.carousel-item');
         this.items.forEach(item=> {
             item.querySelector(this.carouselImage).classList.add('transparent')
@@ -65,8 +64,14 @@ class Carousel {
         this.btns.forEach((btn, index) => {
             console.log('setting listener')
             btn.addEventListener('click',()=> {
+                this.timer = Date.now
                 this.imageFade(index)
             })})
+        this.timer = Date.now()
+        setInterval(() => {
+            console.log('fading')
+            this.currItem === this.items.length-1 ? this.imageFade(0): this.imageFade(this.currItem+1)
+        }, 4000)         
     }
     updateCarousel(index){
         this.btns[this.currItem].classList.remove(this.buttonSelected)
